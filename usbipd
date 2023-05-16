@@ -10,4 +10,4 @@ usbipd list
 
 # To attach a device to a kali-linux WSL instance:
 # Note: This may require you to run `sudo udevadm trigger --action=change` within WSL.
-usbipd wsl attach --hardware-id XXXX:XXXX --distribution kali-linux --auto-attach
+usbipd wsl attach --hardware-id <hardware_id> --distribution kali-linux --auto-attach
