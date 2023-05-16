@@ -1,0 +1,20 @@
+---
+syntax: bash
+tags: [ security, proxmark, nfc, rfid, cryptography ]
+---
+# To launch the proxmark3 client on Termux using TCPUART on localhost port 1234:
+proxmark3 tcp:localhost:1234
+
+# To launch the proxmark3 client on Linux and WSL:
+# Note: WSL relies on usbipd, see `cheat usbipd`
+proxmark3 /dev/ttyACM0
+
+# To launch the proxmark3 client offline:
+proxmark3
+
+# To flash a compiled fullimage.elf to the proxmark from Termux using TCPUART on localhost port 1234:
+# Note: to compile the fullimage.elf on Termux see `cheat proot-distro`
+proxmark3 tcp:localhost:1234 --flash --image armsrc/obj/fullimage.elf
+
+# To flash a compiled fullimage.elf and bootrom.elf to the proxmark from Linux:
+proxmark3 /dev/ttyACM0 --flash --unlock-bootloader --image bootrom.elf --image fullimage.elf
