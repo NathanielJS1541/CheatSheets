@@ -205,6 +205,7 @@ git commit -a -S -m 'Signed commit'
 git log --pretty="format:%h %G? %aN %s"
 
 # Defined the key to use for signing commits:
+# Note: These keys can be listed with `gpg --list-secret-keys --keyid-format=long`
 git config user.signingkey [KEYID]
 
 # Set signing of commits globally:
@@ -212,3 +213,9 @@ git config --global commit.gpgsign true
 
 # To list unstracked files:
 git ls-files --others --exclude-standard
+
+# Find all repos under the working directory and run `git pull` on them:
+## PowerShell:
+Get-ChildItem -Path . -Directory -Recurse | Where-Object { (Get-ChildItem $_.FullName -Force) -match ".git" } | ForEach-Object { git -C $_.FullName pull }
+## bash:
+find . -type d -name ".git" | xargs -n 1 dirname | xargs -I {} git -C {} pull
