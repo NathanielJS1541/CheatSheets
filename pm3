@@ -12,7 +12,7 @@ pm3 --list
 pm3 -n <N>
 
 # To connect to a specified port:
-pm3 -p /dev/ttyACM0
+pm3 -p <port>
 
 # To start proxmark3 offline:
 pm3 -o
