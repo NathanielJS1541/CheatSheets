@@ -1,0 +1,13 @@
+---
+syntax: PowerShell
+tags: [ networking, wsl, virtualization, proxmark ]
+---
+# To install usbipd:
+winget install usbipd
+
+# To list currently attached devices:
+usbipd list
+
+# To attach a device to a kali-linux WSL instance:
+# Note: This may require you to run `sudo udevadm trigger --action=change` within WSL.
+usbipd wsl attach --hardware-id XXXX:XXXX --distribution kali-linux --auto-attach

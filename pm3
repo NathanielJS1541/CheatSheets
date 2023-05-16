@@ -1,0 +1,21 @@
+---
+syntax: bash
+tags: [ proxmark ]
+---
+# To launch the proxmark3 client with an automatically guessed port:
+pm3
+
+# To list available ports:
+pm3 --list
+
+# To connect a numbered port from the list:
+pm3 -n <N>
+
+# To connect to a specified port:
+pm3 -p /dev/ttyACM0
+
+# To start proxmark3 offline:
+pm3 -o
+
+# To forward proxmark3 help through pm3:
+pm3 -hh
