@@ -1,0 +1,127 @@
+---
+syntax: PowerShell
+tags: [ windows, packaging ]
+---
+# Search for an app with scoop:
+scoop search <app>
+
+# Install an app with scoop:
+scoop install <app>
+
+# Install a specific version of an app with scoop:
+scoop install <app>@<version>
+
+# Update an app installed by scoop:
+scoop update <app>
+
+# Update all apps installed by scoop to the latest version:
+scoop update *
+
+# Update only scoop:
+scoop update
+
+# Uninstall an app installed by scoop:
+scoop uninstall <app>
+
+# Uninstall an app installed by scoop and remove all persistent data:
+scoop uninstall <app> -p
+
+# View scoop's cache:
+scoop cache show
+
+# Remove an item from scoop's cache:
+scoop cache rm <app>
+
+# Completely clear scoop's cache:
+scoop cache rm *
+
+# Cleanup old versions of an app:
+scoop cleanup <app>
+
+# Cleanup old versions of all apps:
+scoop cleanup *
+scoop cleanup -a  # Alternative method
+
+# To list all buckets available for `soop bucket add`:
+scoop bucket known
+
+# To list currently added buckets:
+scoop bucket list
+
+# Add a bucket to scoop:
+scoop bucket add <bucket>
+
+# Remove a bucket from scoop:
+scoop bucket rm <bucket>
+
+# Hold a user-scoped app to disable updates:
+scoop hold <app>
+
+# Hold a global app to disable updates:
+scoop hold -g <app>
+
+# Unhold a user-scoped app to enable updates:
+scoop unhold <app>
+
+# Unhold a global app to enable updates:
+scoop unhold -g <app>
+
+# Get information about a specific app:
+scoop info <app>
+
+# Get the path to a command installed with scoop:
+scoop which <command>
+
+# Open the homepage for a given app:
+scoop home <app>
+
+# Get all scoop configuration settings:
+scoop config
+
+# Get a specific configuration setting:
+scoop config <name>
+
+# Set a specific configuration setting:
+scoop config <name> <value>
+
+# Remove a specific scoop configuration value:
+scoop config rm <name>
+
+# Enable aria2c:
+scoop config aria2-enabled $true
+
+# Disable aria2c warning:
+scoop config aria2-warning-enabled $false
+
+# Use bat instead of cat for showing the contents of an app's manifest:
+scoop config cat_style default
+
+# Show the contents of an app's manifest:
+scoop cat <app>
+
+# Check for potential problems with scoop:
+scoop checkup
+
+# List the dependencies for an app:
+scoop depends <app>
+
+# Download an app and check its hash without installing:
+scoop download <app>
+
+# Download a specific version of an app and check its hash without installing:
+scoop download <app>@<version>
+
+# List currently installed apps:
+scoop list
+
+# Export the curently installed apps and buckets to a json file:
+scoop export > <filename>.json
+
+# Export the currently installed apps, buckets and configs to a json file:
+scoop export -c > <filename>.json
+
+# Imports apps, buckets and configs from a Scoopfile in JSON format
+scoop import <filename>.json
+
+# Get help for a specific command:
+scoop help <command>
